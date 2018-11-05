@@ -1,0 +1,65 @@
+.hgrid {
+    .handsontable {
+        thead {
+            th {
+                &.hideHeader {
+                    display: none;
+                }
+            }
+        }
+        .wtBorder {
+            background-color: transparent !important;
+        }
+        .current-row,
+        .current {
+            background: #ffe7bc;
+        }
+        .RiseHover {
+            td {
+                background: rgb(239, 242, 247);
+            }
+            .current-row,
+            .current {
+                background: #ffe7bc;
+            }
+        }
+        tr {
+            height: 30px;
+            td {
+                height: 30px;
+                line-height: 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .htCenter {
+        td {
+            text-align: center;
+        }
+    }
+    .htLeft {
+        td {
+            text-align: left;
+        }
+    }
+    .htRight {
+        td {
+            text-align: right;
+        }
+    }
+    .ht_clone_left {
+        tbody {
+            td {
+                box-sizing: border-box;
+            }
+        }
+    }
+    .ht_master:not(.innerBorderTop) thead tr:last-child th,
+    .ht_master:not(.innerBorderTop) ~ .handsontable thead tr:last-child th,
+    .ht_master:not(.innerBorderTop) thead tr.lastChild th,
+    .ht_master:not(.innerBorderTop) ~ .handsontable thead tr.lastChild th {
+        border-bottom-width: thin;
+    }
+}

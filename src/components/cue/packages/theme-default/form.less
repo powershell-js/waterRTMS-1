@@ -1,0 +1,199 @@
+@border-color: #cbd5dd;
+@err-border-color: #f56c6c;
+@color: #666;
+.hd-form {
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        td {
+            padding: 5px;
+            div.el-form-item {
+                color: @color;
+                margin-bottom: 0;
+                background: transparent;
+                .el-form-item__label {
+                    padding: 0;
+                    font-weight: normal;
+                    line-height: 30px;
+                    font-size: 12px;
+                    &:before {
+                        margin-right: 6px;
+                        float: left;
+                        display: inline-block;
+                        width: 6px;
+                    }
+                }
+                .el-form-item__content {
+                    padding: 0 5px 0 10px;
+                    line-height: 30px;
+                    font-size: 12px;
+                    > * {
+                        font-size: 12px;
+                    }
+                    .el-input__inner {
+                        box-sizing: border-box;
+                        height: 30px;
+                        line-height: 28px;
+                        border-color: @border-color;
+                        border-radius: 2px;
+                        padding: 0 5px;
+                    }
+                    .el-textarea__inner {
+                        box-sizing: border-box;
+                        min-height: 30px;
+                        line-height: 28px;
+                        border-color: @border-color;
+                        border-radius: 2px;
+                        resize: none;
+                        padding: 0 5px;
+                    }
+
+                    .el-input-group {
+                        &.el-input-group--append {
+                            .el-input__inner {
+                                border-right: 0;
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+                            }
+                        }
+                        &.el-input-group--prepend {
+                            .el-input__inner {
+                                border-left: 0;
+                                border-top-left-radius: 0;
+                                border-bottom-left-radius: 0;
+                            }
+                        }
+                        .el-input-group__append,
+                        .el-input-group__prepend {
+                            border: 1px solid @border-color;
+                            border-left: 0;
+                            background-color: inherit;
+                            padding: 0;
+                            color: @border-color;
+                            > span {
+                                padding: 0 5px
+                            }
+                            > .el-button {
+                                padding: 0 5px;
+                                margin: 0;
+                                background: transparent;
+                                border: 0;
+                                color: inherit;
+                                &:hover, &:focus {
+                                    color: inherit;
+                                    background: transparent;
+                                    border: 0;
+                                }
+                            }
+                        }
+                        .el-input-group__append {
+                            border-radius: 0 2px 2px 0;
+                        }
+                        .el-input-group__prepend {
+                            border-radius: 2px 0 0 2px;
+                        }
+                    }
+                    .el-input.el-input--suffix {
+                        .el-input__inner {
+                            padding-right: 30px;
+                        }
+                        .el-input__suffix {
+                            right: 0;
+                            color: @border-color;
+                            .el-input__icon {
+                                padding: 0 5px;
+                                width: auto;
+                                color: @border-color;
+                            }
+                        }
+                    }
+
+                    .el-date-editor {
+                        .el-input__inner {
+                            padding-right: 30px;
+                        }
+                        .el-input__prefix {
+                            right: 0;
+                            left: auto;
+                            color: @border-color;
+                            .el-input__icon {
+                                padding: 0 5px;
+                                width: auto;
+                                color: @border-color;
+                            }
+                        }
+                    }
+
+                    .hd-upload-wrap {
+                        > .el-button {
+                            height: 30px;
+                            border-radius: 2px;
+                            padding: 0 15px;
+                            color: @color;
+                            border-color: @border-color;
+                        }
+                    }
+                }
+
+                &.is-error .el-form-item__content {
+                    .el-input__inner,
+                    .el-textarea__inner {
+                        border-color: @err-border-color;
+                    }
+                    .el-input-group {
+                        .el-input-group__append {
+                            border-color: @err-border-color;
+                        }
+                        .el-input-group__prepend {
+                            border-color: @err-border-color;
+                        }
+                    }
+                }
+
+                &:not(.is-required) .el-form-item__label {
+                    padding-left: 12px;
+                }
+            }
+            //.hd-upload {
+            //    .el-upload {
+            //        width: 68px;
+            //        float: left;
+            //    }
+            //    .el-upload-list {
+            //        width: 30px;
+            //        float: left;
+            //        .el-upload-list__item-name {
+            //            display: none;
+            //        }
+            //    }
+            //}
+            .help-icon {
+                color: #FF7A2A;
+                cursor: pointer;
+            }
+        }
+    }
+    .errors {
+        max-height: 80px;
+        overflow: auto;
+        margin: 5px;
+        .content-errors {
+            font-size: 12px;
+            margin: 0;
+            padding: 5px;
+            color: #a94442;
+            background-color: #f2dede;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            > p + p {
+                margin-top: 5px;
+            }
+        }
+    }
+}

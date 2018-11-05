@@ -1,0 +1,38 @@
+.htable.handsontable thead th.hiddenHeaderRow {
+    display: none;
+}
+
+.htable.handsontable thead th.rowspan div.relative {
+  vertical-align: middle;
+  text-align: center;
+}
+  
+.htable.handsontable tr:first-child td{
+  border-top:none;
+}
+
+.htable.handsontable th{
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+.htable.handsontable tbody th.ht__active_highlight, .htable.handsontable thead th.ht__active_highlight {
+  background-color: #f1f1f1;
+}
+.htable.handsontable tbody th.ht__highlight, .htable.handsontable thead th.ht__highlight{
+  background-color: #f1f1f1;
+}
+
+.htable.handsontable th, .htable.handsontable td {
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  color: #333333;
+  height: 28px;
+  empty-cells: show;
+  line-height: 28px;
+  padding: 0 4px 0 4px;
+  vertical-align: top;
+  overflow: hidden;
+  outline-width: 0;
+  white-space: pre-line;
+  background-clip: padding-box;
+}

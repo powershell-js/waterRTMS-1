@@ -1,0 +1,291 @@
+/* 淘宝的样式初始化代码： */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+/* a:hover { text-decoration:underline; } */
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+html{
+    /* font-size: 16px; */
+    /* height: 100%; */
+}
+body{
+    height: 100%;
+    font-size: 0.32rem;
+}
+a,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+/* 导入外部字体 */
+@font-face{
+    font-family: 'ReznorDownwardSpiral';
+    src: url('../font-family/ReznorDownwardSpiral.ttf');
+}
+@font-face{
+    font-family: 'HYYaKuHeiW';
+    src: url('../font-family/HYYaKuHeiW.ttf');
+}
+@font-face{
+    font-family: 'PingFangSC-Medium';
+    src: url('../font-family/PingFangMedium.ttf');
+}
+/* 字体 */
+body{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-family: 'PingFang';
+}
+hr{
+    height: 0px;
+    border-top: 1px solid rgb(217,217,217);
+    border-right: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+/* mint ui 样式重写 */
+.mint-cell-wrapper{
+    background-image: none!important;
+}
+.mint-cell{
+    border-bottom: 1px solid rgb(217,217,217);
+}
+.mint-cell:last-child{
+    background-image: none!important;
+}
+.mint-cell-wrapper{
+    padding-left: 0.32rem!important;
+}
+.mint-msgbox-input{
+    text-align: center;
+}
+div.mint-msgbox-input input{
+    width: auto;
+}
+div.mt-progress-content div{
+    border-radius: 2rem;
+}
+div.progressRed div.mt-progress-content .mt-progress-progress{
+    background-color: #FF9C95 !important;
+}
+div.progressGreen div.mt-progress-content .mt-progress-progress{
+    background-color: #77D6D4 !important;
+}
+.mint-button{
+    font-size: 0.24rem !important;
+}
+.mint-button-text{
+    font-size: inherit;
+}
+.mint-navbar .mint-tab-item.is-selected {
+    border-bottom: 3px solid #FE7167 !important;
+    color: #FE7167 !important;
+}
+.mint-field-core{
+    /* font-size: 0.26rem !important; */
+}
+.mint-msgbox-message{
+    line-height: 26px !important;
+}
+.mint-msgbox-input{
+    padding-top: 10px !important;
+}
+div.mint-msgbox-input input{
+    text-align: center;
+}
+.mint-cell-title{
+   color: #999999;
+}
+.mint-tab-item-label{
+    font-size: 0.3rem !important;
+}
+.mint-searchbar-inner{
+    font-size: 0.26rem;
+}
+input::-webkit-search-cancel-button{
+    display: none;
+}
+.mint-search-list{
+    display: none;
+}
+.mint-toast{
+    z-index: 10086 !important;
+}
+/* .mint-loadmore-content.is-dropped{
+    display: block;
+} */
+/* .mint-loadmore-content{
+    display: inline;
+} */
+.mint-indicator-mask{
+    z-index: 111111;
+}
+.mint-indicator-wrapper{
+    z-index: 111111;
+}
+
+/* 公共样式 */
+/**红底白字**/
+.redBackWriteFont{
+    background-color: #FE7167 !important;
+    color: #fff !important;
+}
+/**绿色底**/
+.greenBack{
+    background: #77D6D4 !important;
+    border: 1px solid #77D6D4 !important;
+}
+/**绿色字**/
+.greenFont{
+    color: #77D6D4 !important;
+}
+/**红色字**/
+.redFont{
+    color: #FE7167 !important;
+}
+/**绿色边框绿色字**/
+.greenBorderGreenFont{
+    border: 1px solid #77D6D4 !important;
+    color: #77D6D4 !important;
+}
+/* 橘红色 */
+.F76B1CFont{
+    color: #F76B1C !important;
+}
+/** 100vh **/
+.vh100{
+    height: 100vh;
+}
+.vh110{
+    height: 110vh;
+}
+.vh120{
+    height: 120vh;
+}
+/** f2f2f2 **/
+.f2f2f2{
+    background-color:#f2f2f2 !important;
+}
+/** ffffff **/
+.ffffff{
+    background-color:#ffffff !important;
+}
+
+.activeName{
+    font-size: 0.3rem;
+    color: #000000;
+    /* font-weight: 600; */
+    display: inline-block;
+}
+.activeBadge{
+    margin-left: 0.15rem;
+    border-radius: 0.06rem;
+    font-size: 0.24rem;
+    padding: 0px 0.16rem;
+    color: #fff;
+    text-align: center;
+    /* display: inline-block; */
+    background: #FF9C95;
+    border: 1px solid #FF9C95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.activeSol{
+    display: inline-block;
+    margin-top: 0.1rem;
+    color: #666666;
+    font-size: 0.26rem;
+}
+.activeStep{
+    font-size: 0.3rem;
+    color: #FE7167;
+    margin-top: 0.38rem;
+    display: inline-block;
+}
+.activeRight{
+    color: #B4B4B4;
+}
+.font13back333{
+    display: block;
+    font-size: 0.26rem;
+    color: #333333;
+}
+.font12back666{
+    display: block;
+    font-size: 0.24rem;
+    color: #666666;
+}
+/* 省略号 */
+.nameAndFlag{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.waitForTeamNameSpan{
+    font-size: 0.3rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 2.6rem;
+}
+.waitForTeamFlagSpan{
+    width: 0.6rem;
+    height: 0.32rem;
+}
+/* 所有队伍图片 */
+.allTeamImgDiv{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.allTeamImg{
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    /* width: auto;
+    height: auto;
+    zoom: 10%; */
+}
+/* 首页图片时间 */
+.timeBody{
+    position: absolute;
+    bottom: 0.45rem;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    text-align: center;
+    width: 3.86rem;
+}
+.activeSingUpTime{
+    background: #A0DDDB;
+    font-size: 0.2rem;
+    color: #FFFFFF;
+    margin-bottom:0.1rem;
+    white-space: nowrap;
+}
+.timeBodySpan{
+    position: relative;
+    width: 3.5rem;
+    margin: auto;
+}
+div.timeBodySpan span{
+    display: block;
+    font-size: 0.2rem;
+    color: #3A9592;
+    /* position: absolute; */
+}
+.timeBodySpanOne{
+    text-align: left;
+}
+.timeBodySpanTwo{
+    text-align: right;
+}

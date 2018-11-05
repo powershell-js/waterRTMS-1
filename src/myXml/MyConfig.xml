@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<configuration>
+	<runningstatus>
+	    <menu>
+	        <menuitem label="运行状态分析：" type="service">
+	           	<layer id="PipeFlow" field="Flow" label="管道流量" type="dynamic" time="true" datatype="line" datasource="pipe" draw="false" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/Pipe_Flow/MapServer"/>
+	            <layer id="PipeVelocity" field="Velocity" label="管道流速" type="dynamic" time="true" datatype="line" datasource="pipe" draw="false" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/Pipe_Velocity/MapServer"/>
+	            <layer id="pipeSlop" field="Slop" label="管道水力坡度" type="dynamic" time="true" datatype="line" datasource="pipe" draw="false" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/Pipe_Slop/MapServer"/>
+	             <layer id="HydraulicGrade" field="HydraulicGrade" label="水压标高" type="dynamic" time="true" datatype="point" datasource="junction" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="Pressure" field="Pressure" label="压力" type="dynamic" time="true" datatype="point" datasource="junction" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="pipeFlowDirection" field="pipeFlow" label="水流方向" type="dynamic" time="true" datatype="line" datasource="pipeflow" draw="false" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="Demand" field="Demand" label="节点流量" type="dynamic" time="true" datatype="point" datasource="junction" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="SupplyBoundary" field="SupplyArea" label="供水分界线" type="dynamic" time="true" draw="false" datasource="pipe" datatype="line" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/WaterSupplyBoundary/MapServer"/>
+	            <layer id="Age" field="Age" label="水龄" type="dynamic" time="true" datatype="point" datasource="pipeAge" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="PipeAge" field="PipeAge" label="管龄" type="dynamic" time="false" datatype="line" datasource="pipeAge2" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="Diameter" field="管径" label="管径分类" type="dynamic" time="false" datatype="line" datasource="pipeAttribute" draw="false" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/ModelPipe_Diameter/MapServer"/>
+	            <layer id="Material" field="PipeMaterial" label="管材分类" type="dynamic" time="false" datatype="line" datasource="pipeAttribute" draw="false" icon="" visible="false" alpha="1" url="http://112.64.170.158:8888/ArcGIS/rest/services/ModelPipe_Material/MapServer"/>
+	            <layer id="PressureChange" field="PressureChange" label="24小时压力波动" type="dynamic" time="false" datatype="point" datasource="pressureChange" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="FlowChangeCount" field="FlowChangeCount" label="24小时流向变化次数" type="dynamic" time="false" datatype="point" datasource="flowChangeCount" draw="true" icon="" visible="false" alpha="1" url=""/>
+	            <layer id="ValveUpdate" field="ValveUpdate" label="阀门动态" type="dynamic" time="false" datatype="point" datasource="valveUpdate" draw="true" icon="" visible="false" alpha="1" url=""/>
+	        </menuitem>
+	    </menu>
+    </runningstatus>
+    <legend>
+    	<flow>
+    		<level min="" max="10" color="0x399AFF" lineWidth="3"/>
+    		<level min="10" max="50" color="0xD6FF00" lineWidth="5"/>
+    		<level min="50" max="100" color="0xFF55FF" lineWidth="6"/>
+    		
+    		<level min="100" max="500" color="0x00ffc6" lineWidth="7"/>
+    		<level min="500" max="1000" color="0x005de7" lineWidth="8"/>
+    		<level min="1000" max="2000" color="0x73aa00" lineWidth="9"/>
+    		<level min="2000" max="3000" color="0xe79a00" lineWidth="10"/>
+    		<level min="3000" max="" color="0xff0000" lineWidth="11"/>
+    	</flow>
+    	<velocity>
+    		<level min="" max="0.05" color="0x00ffc6" lineWidth="3"/>
+    		<level min="0.05" max="0.1" color="0x005de7" lineWidth="5"/>
+    		<level min="0.1" max="0.3" color="0x73aa00" lineWidth="7"/>
+    		<level min="0.3" max="0.5" color="0xe79a00" lineWidth="9"/>
+    		<level min="0.5" max="" color="0xff0000" lineWidth="11"/>
+    	</velocity>
+    <!-- 	<slop>
+    		<level min="" max="0.1" color="0x00ffc6" lineWidth="3"/>
+    		<level min="0.1" max="1" color="0x005de7" lineWidth="5"/>
+    		<level min="1" max="3" color="0x73aa00" lineWidth="7"/>
+    		<level min="3" max="10" color="0xe79a00" lineWidth="9"/>
+    		<level min="10" max="" color="0xff0000" lineWidth="11"/>
+    	</slop> -->
+    		<slop>
+    		<level min="" max="0.01" color="0x00ffc6" lineWidth="3"/>
+    		<level min="0.01" max="0.05" color="0x005de7" lineWidth="5"/>
+    		<level min="0.05" max="0.1" color="0x73aa00" lineWidth="7"/>
+    		<level min="0.1" max="0.2" color="0xe79a00" lineWidth="9"/>
+    		<level min="0.2" max="" color="0xff0000" lineWidth="11"/>
+    	</slop>
+    	<age>
+    		<level min="" max="24" color="0x00ffc6" lineWidth="1"/>
+    		<level min="24" max="48" color="0x005de7" lineWidth="2"/>
+    		<level min="48" max="72" color="0x73aa00" lineWidth="3"/>
+    		<level min="72" max="96" color="0xe79a00" lineWidth="4"/>
+    		<level min="96" max="" color="0xff0000" lineWidth="5"/>
+    	</age>
+    	<pipeDiameter>
+    		<level min="" max="100" color="0x00C7FF" lineWidth="3"/>
+    		<level min="100" max="300" color="0x005DE7" lineWidth="4"/>
+    		<level min="300" max="500" color="0xAD00E7" lineWidth="5"/>
+    		<level min="500" max="800" color="0x39AA00" lineWidth="6"/>
+    		<level min="800" max="1000" color="0xFF8600" lineWidth="7"/>
+    		<level min="1000" max="" color="0xE70000" lineWidth="8"/>
+    	</pipeDiameter>
+    	<hydraulicGrade>
+    		<level min="" max="33" color="0x0808ff" weight="3"/>
+    		<level min="33" max="34" color="0x399eff" weight="3.5"/>
+    		<level min="34" max="35" color="0x73ffd6" weight="4"/>
+    		<level min="35" max="36" color="0xe7ff4a" weight="4.5"/>
+    		<level min="36" max="38" color="0xffa600" weight="5"/>
+    		<level min="38" max="" color="0xff0000" weight="5.5"/>
+    	</hydraulicGrade>
+    	<pressure>
+    		<level min="" max="20" color="0x39aa00" weight="3"/>
+    		<level min="20" max="25" color="0x8cd300" weight="3.5"/>
+    		<level min="25" max="30" color="0xffff00" weight="4"/>
+    		<level min="30" max="32" color="0xff8200" weight="4.5"/>
+    		<level min="32" max="" color="0xff0000" weight="5"/>
+    	</pressure>
+    	<demand>
+    		<level min="" max="2.5" color="0xbdebff" weight="3"/>
+    		<level min="2.5" max="10" color="0x0071ff" weight="4"/>
+    		<level min="10" max="50" color="0x00ff00" weight="6"/>
+    		<level min="50" max="100" color="0xff8200" weight="9"/>
+    		<level min="100" max="" color="0xff0000" weight="12"/>
+    	</demand>
+    	<pipeAge>
+    		<level min="" max="5" color="0x00ffc6" lineWidth="2"/>
+    		<level min="5" max="10" color="0xEEEE00" lineWidth="3"/>
+    		<level min="10" max="15" color="0x005de7" lineWidth="5"/>
+    		<level min="15" max="20" color="0x73aa00" lineWidth="7"/>
+    		<level min="20" max="25" color="0xFF7F00" lineWidth="8"/>
+    		<level min="25" max="30" color="0xEE00EE" lineWidth="9"/>
+    		<level min="30" max="" color="0xff0000" lineWidth="11"/>
+    		<level min="" max="" color="0x000000" lineWidth="1.5"/>
+    	</pipeAge>
+    </legend>
+    <Physical_PipeMaterial>
+    <Material field="" color="0xA524AA" lineWidth="5"/>
+    	<Material field="Ductile Iron" color="0xA52484" lineWidth="5"/>
+    	<Material field="HDPE" color="0x18388C" lineWidth="5"/>
+    	<Material field="HOBAS" color="0x847D42" lineWidth="5"/>
+    	<Material field="PE" color="0x632CA5" lineWidth="5"/>
+    	<Material field="PPR" color="0x31A239" lineWidth="5"/>
+    	<Material field="UPVC" color="0x94457B" lineWidth="5"/>
+    	<Material field="玻纹管" color="0x6B9E4A" lineWidth="5"/>
+    	<Material field="不锈钢" color="0x31A2FF" lineWidth="5"/>
+    	<Material field="不锈钢复合" color="0x942C39" lineWidth="5"/>
+    	<Material field="镀锌" color="0x8C5542" lineWidth="5"/>
+    	<Material field="复合管" color="0xA5AA39" lineWidth="5"/>
+    	<Material field="钢" color="0xFF5500" lineWidth="5"/>
+    	<Material field="钢复" color="0x00FFC6" lineWidth="5"/>
+    	<Material field="钢塑" color="0x4AAEB5" lineWidth="5"/>
+    	<Material field="铝塑" color="0xAD5D21" lineWidth="5"/>
+    	<!-- <Material field="钢网复合管" color="0x4A65AD" lineWidth="5"/> -->
+    	<Material field="球/钢" color="0x0071FF" lineWidth="5"/>
+    	<Material field="球墨" color="0x29A25A" lineWidth="5"/>
+    	<Material field="石棉" color="0x29AFF" lineWidth="5"/>
+    	<Material field="双壁波纹管" color="0x29FFFF" lineWidth="5"/>
+    	<!-- Material field="熟铁管" color="0x29FF5A" lineWidth="5"/-->
+    	<Material field="铸" color="0xFFA25A" lineWidth="5"/>
+    	<Material field="塑料" color="0xF9A25F" lineWidth="5"/>
+    	<Material field="无缝钢管" color="0x2FF25A" lineWidth="5"/>
+    	<Material field="铸铁" color="0x2FAFFA" lineWidth="5"/>
+    	<Material field="自应力" color="0x2FA2FF" lineWidth="5"/>
+    	<!--Material field="自应力" color="0xF9AF5A"/-->
+    </Physical_PipeMaterial>
+    <SupplyArea>
+    	<supply id="2467691" label="一期2#清水池" color="0xff0000" lineWidth="7"/>
+    	<supply id="2467690" label="一期1#清水池" color="0x0071ff" lineWidth="7"/>
+    	<supply id="2467689" label="二期1#清水池" color="0x086921" lineWidth="7"/>
+    	<supply id="2467688" label="二期2#清水池" color="0x00c7ff" lineWidth="7"/>
+    	<supply id="2750726" label="水厂出口" color="0xCDCDB4" lineWidth="7"/>
+    	<!-- <supply id="2743126" label="二期1#水池" color="0xff00c6" lineWidth="7"/>
+    	<supply id="2743125" label="一期1#水池" color="0xc61c84" lineWidth="7"/> -->
+    	
+    <!-- 	<supply id="1809232" label="马海调流" color="0x0000ff" lineWidth="7"/>
+    	<supply id="1809234" label="329调流" color="0xffaa00" lineWidth="7"/>
+    	<supply id="1809240" label="凤鸣泵房" color="0x00e7ad" lineWidth="7"/>
+    	<supply id="178578" label="天涯木业" color="0xa4bed4" lineWidth="7"/>
+    	<supply id="2166053" label="润和庄园" color="0x8B0000" lineWidth="7"/> -->
+    	<!--supply id="75733" label="临江路"/-->
+    </SupplyArea>
+    <GoogleMap><!-- -21736.8 -->
+    	<mappoint xMin="470083.27864125" xMax="535825.77522175" yMin="302673.3739848" yMax="340526.3930992" height="253.783873661424" width="256"  x="-28602090.653212972" y="14575939.396441672" mul="0.869725407161398"/>
+    </GoogleMap>
+    <Levels>
+    	<level number="11" resolution="76.4370282850732" scale="320000"/>
+    	<level number="12" resolution="38.2185141425366" scale="160000"/>
+    	<level number="13" resolution="19.1092570712683" scale="80000"/>
+    	<level number="14" resolution="9.55462853563415" scale="40000"/>
+    	<level number="15" resolution="4.77731426794937" scale="20000"/>
+    	<level number="16" resolution="2.38865713397468" scale=" 10000"/>
+    	<level number="17" resolution="1.19432856685505" scale="5000"/>
+    	<level number="18" resolution="0.597164283559817" scale="2000"/>
+    	<level number="19" resolution="0.298582141647617" scale="1000"/>
+    </Levels>
+</configuration>
